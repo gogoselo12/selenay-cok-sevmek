@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seni Seviyor Musun?</title>
+  <style>
+    body { font-family: Arial; background: #fff0f5; text-align: center; padding: 50px; }
+    h1 { font-size: 26px; color: #333; margin-bottom: 40px; }
+    button { font-size: 20px; padding: 12px 24px; margin: 10px; border: none; border-radius: 12px; cursor: pointer; }
+    .evet { background: #c0ffc0; }
+    .hayir { background: #ffb3b3; }
+  </style>
+</head>
+<body>
+  <h1 id="soru">Beni seviyor musun?</h1>
+  <button class="evet" onclick="evetTikla()">Evet</button>
+  <button class="hayir" onclick="hayirTikla()">Hayır</button>
+
+  <script>
+    const sorular = [
+      "Beni seviyor musun",
+      "Emin misin",
+      "Bak bu son şansın",
+      "Tekrar düşünmeni istiyorum",
+      "Hata yapma sakın",
+      "Seviyorsun seviyorsun biliyorum",
+      "Hadi evete bas",
+      "Bekliyorum bak",
+      "Sevdiğini biliyorum",
+      "Naz yapma hadi",
+      "Bas şu evete",
+      "Hadi ama bekliyorum",
+      "Sonsuza kadar gider böyle",
+      "Seni bırakmayacağım haberin olsun",
+      "Seni yıldızlar kadar çok seviyorum"
+    ];
+    let i = 0;
+    function hayirTikla() {
+      i = (i + 1) % sorular.length;
+      document.getElementById("soru").textContent = sorular[i];
+    }
+    function evetTikla() {
+      document.getElementById("soru").textContent = "Ben de seni çok seviyorum ❤️";
+    }
+  </script>
+</body>
+</html>
